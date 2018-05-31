@@ -22,7 +22,8 @@ It correctly bundles React in production mode and optimizes the build for the be
 
 The build is minified and the filenames include the hashes.<br>
 
-###Features
+## Features
+
 User can be able to authenticate against the application .<br>
 User can be able to see all projects .<br>
 User can be able to find projects based on its name and Id .<br>
