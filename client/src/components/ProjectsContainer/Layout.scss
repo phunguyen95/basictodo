@@ -1,0 +1,147 @@
+.wrapped-container {
+  padding: 0;
+  margin: 0;
+}
+.container {
+}
+.heading_title {
+  text-align: center;
+}
+.projects-section {
+  padding: 0;
+  margin: 0;
+}
+.project-items {
+  display: flex;
+  flex-wrap: wrap;
+}
+.view-more {
+  text-align: center;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+.btn-view-more {
+  outline: none;
+  border: 1px solid #000;
+  color: #000;
+  background: #fff;
+  text-align: center;
+  font-size: 1rem;
+  padding: 0.6rem;
+  cursor: pointer;
+  &:hover {
+    background: orange;
+  }
+}
+.wrapped-spinner {
+  width: 100%;
+}
+.wrapped__search {
+  width: 100%;
+  margin-bottom: 1rem;
+}
+.search__bar {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.search__bar input {
+  border-radius: 0;
+  overflow: hidden;
+  padding: 8px;
+  color: #525260;
+  border: none;
+  outline: none;
+  padding-left: 1rem;
+  background-color: #e5e9f1;
+  width: 100%;
+}
+.btn-search {
+  min-width: 0;
+  margin-right: 0;
+  border-radius: 0;
+  color: #000;
+  padding: 0 0.75em;
+  border: none;
+  background-color: #e5e9f1;
+}
+.project-item {
+  border: 3px solid #d9d9d9;
+  flex: 0 0 99%;
+  margin-bottom: 1.5rem;
+}
+.project-items {
+  padding: 0.5rem;
+}
+.project-title {
+  h1 {
+    font-size: 1rem;
+  }
+  span {
+    font-size: 0.8rem;
+  }
+  p {
+    font-size: 0.8rem;
+  }
+}
+
+@media (min-width: 40rem) {
+  .wrapped__search {
+    width: 50%;
+  }
+  .project-items {
+    justify-content: flex-start;
+  }
+  .btn-search {
+    img {
+      height: 57px;
+    }
+  }
+  .search__bar input {
+    padding: 1rem;
+  }
+
+  .project-item {
+    margin-right: 0.3rem;
+    flex: 0 0 calc(33% - 10px);
+  }
+  .item-heading {
+    border-bottom: 3px solid #d9d9d9;
+    display: flex;
+  }
+  .project-id {
+    flex: 0 0 10%;
+    margin-right: 1rem;
+  }
+  .project-name {
+    flex: 1;
+    font-size: 0.9rem;
+  }
+  .project-title {
+    text-align: center;
+    font-size: 1.5rem;
+    h1 {
+      font-size: 2rem;
+    }
+    span {
+      font-size: 1.4rem;
+    }
+    p {
+      font-size: 1.4rem;
+    }
+    h4 {
+      padding: 0;
+      margin: 0;
+    }
+  }
+  .none {
+    display: none;
+  }
+}
+@media (min-width: 1200px) {
+  .container {
+    width: 1226px;
+    margin: 0 auto;
+  }
+}

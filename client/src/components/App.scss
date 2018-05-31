@@ -1,0 +1,18 @@
+.layout {
+  min-height: calc(100vh - 3.5rem - 8rem);
+  background: white;
+  overflow: hidden;
+  overflow-x: hidden;
+  margin-top: -1rem;
+}
+body {
+  font-family: 'Roboto', sans-serif !important;
+  margin: 0;
+  box-sizing: border-box;
+  overflow-x: hidden;
+  width: 100%;
+  color: #464e55;
+}
+#app {
+  overflow: hidden;
+}
