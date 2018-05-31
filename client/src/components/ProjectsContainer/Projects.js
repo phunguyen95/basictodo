@@ -8,12 +8,12 @@ import Spinner from '../Spinner/Spinner';
 import { Link } from 'react-router-dom';
 import ProjectItem from './ProjectItem';
 import searchLogo from '../../assets/img/search.svg';
-import {isEmpty} from '../utils/isEmpty';
-import classnames from 'classnames'
+import { isEmpty } from '../utils/isEmpty';
+import classnames from 'classnames';
 class Projects extends Component {
-  state={
-    search:''
-  }
+  state = {
+    search: ''
+  };
   componentDidMount() {
     this.props.getProjects();
   }
@@ -25,32 +25,31 @@ class Projects extends Component {
     this.props.searchProjects(e.target.value);
   };
 
- 
-  searchProjects=(loading,searchProjects,searchQuery)=>{
-    let result=null;
-    if(searchQuery){
-      //check the search query from user if it exists then the loading spinner will be appeared 
-      if(loading){
-        result= <Spinner/>
-      }
-      else{
-          if(!isEmpty(searchProjects)){
-            //check if the props searchProjects 's length is having results or not
-            result=searchProjects.map((project, key) => {
-              {/*pass the project to ProjectItme component so it much easier to maintain and add more features later on and the code look nicer*/}
-              return <ProjectItem project={project} key={key} />;
-            });
-          }
-          else{
-           return result= <div>No result founded</div>
-          }
+  searchProjects = (loading, searchProjects, searchQuery) => {
+    let result = null;
+    if (searchQuery) {
+      //check the search query from user if it exists then the loading spinner will be appeared
+      if (loading) {
+        result = <Spinner />;
+      } else {
+        if (!isEmpty(searchProjects)) {
+          //check if the props searchProjects 's length is having results or not
+          result = searchProjects.map((project, key) => {
+            {
+              /*pass the project to ProjectItme component so it much easier to maintain and add more features later on and the code look nicer*/
+            }
+            return <ProjectItem project={project} key={key} />;
+          });
+        } else {
+          return (result = <div>No result founded</div>);
+        }
       }
     }
-   
+
     return result;
-  }
+  };
   render() {
-    const { projects, loading,searchProjects } = this.props.project;
+    const { projects, loading, searchProjects } = this.props.project;
     let projectContent;
     //if projects is not received or the loading is true as we already set it to true when we send the request to the api from action, then if the request succeed, the loading will be set to false
     if (projects === null || loading) {
@@ -64,7 +63,7 @@ class Projects extends Component {
     }
     return (
       <div className="wrapped-container">
-        <div className="container">
+        <div className="container-projects">
           <div className="heading_title">
             <h1>Project Lists</h1>
           </div>
@@ -83,10 +82,13 @@ class Projects extends Component {
             </div>
           </div>
           <section className="projects-section">
-            <div className="project-items">{!this.state.search ?projectContent:null}</div>
+            <div className="project-items">
+              {!this.state.search ? projectContent : null}
+            </div>
             {/*Display full list os projects if  this.state.search is null otherwise will display list of searched Items*/}
-            <div className="project-items">{this.searchProjects(loading,searchProjects,this.state.search)}</div>
-            
+            <div className="project-items">
+              {this.searchProjects(loading, searchProjects, this.state.search)}
+            </div>
           </section>
         </div>
       </div>

@@ -2,10 +2,11 @@ const Validator = require('validator');
 const isEmpty = require('./is-empty');
 module.exports = function validateLoginInput(data) {
   let errors = {};
+  //check email and password
   data.email = !isEmpty(data.email) ? data.email : '';
   data.password = !isEmpty(data.password) ? data.password : '';
 
-  //not pass the validator then set the errors.name
+  //not pass the validator then set the errors
 
   if (!Validator.isEmail(data.email)) {
     errors.email = 'Email is invalid';

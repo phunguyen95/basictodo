@@ -33,15 +33,14 @@ class Login extends Component {
   }
   //checking new props received by redux
   static getDerivedStateFromProps(nextProps) {
-      //check if is there errors when user submit the form
-    if (nextProps.user.errors) {
-      return {
-        errors: nextProps.user.errors
-      };
-    }
+    //check if is there errors when user submit the form
     if (nextProps.user.isAuthenticated) {
       //redirect user after login succesful
       nextProps.history.push('/');
+    } else if (nextProps.user.errors) {
+      return {
+        errors: nextProps.user.errors
+      };
     }
   }
   componentDidMount() {
@@ -62,7 +61,7 @@ class Login extends Component {
                 Sign in to your ProWorkFlow account
               </p>
               <form onSubmit={this.onSubmit}>
-              {/*Pass values to textfieldgroup as props then it will be handle in that component*/}
+                {/*Pass values to textfieldgroup as props then it will be handle in that component*/}
                 <TextFieldGroup
                   type="email"
                   placeholder="Email Address"

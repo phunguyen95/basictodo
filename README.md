@@ -4,6 +4,10 @@ This project was created by using webpack
 
 In the project directory, you can run:
 
+### `npm install`
+
+Install npm packages
+
 ### `npm client`
 
 Runs the client in the development mode .<br>

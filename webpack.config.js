@@ -1,6 +1,5 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-var ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
   entry: './client/src/index.js',
@@ -8,10 +7,8 @@ module.exports = {
     path: path.join(__dirname, '/client/dist'),
     filename: 'index_bundle.js',
     publicPath: '/'
-    
   },
   module: {
-    
     rules: [
       {
         test: /\.js$/,
@@ -53,6 +50,6 @@ module.exports = {
     proxy: {
       '/api': 'http://localhost:3001'
     },
-    historyApiFallback: true,
-  },
+    historyApiFallback: true
+  }
 };
